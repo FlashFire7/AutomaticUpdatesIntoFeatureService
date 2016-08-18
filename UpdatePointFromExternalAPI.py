@@ -87,10 +87,8 @@ def send_AGOL_Request(URL, query_dict, returnType=False):
          "JSON" : simply return the raw response from the request, it will be parsed by the calling function
          else (number) : a numeric value will be used to ensure that number of features exist in the response JSON
     """
-    
-    query_string = urllib.urlencode(query_dict)
 
-    jsonResponse = urllib.urlopen(URL, urllib.urlencode(query_dict))
+    jsonResponse = urllib.urlopen(URL, urllib.urlencode(query_string))
     jsonOuput = json.loads(jsonResponse.read())
     
     if returnType == "JSON":
