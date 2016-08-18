@@ -90,7 +90,7 @@ def send_AGOL_Request(URL, query_dict, returnType=False):
     
     query_string = urllib.urlencode(query_dict)
 
-    jsonResponse = urllib.urlopen(URL, urllib.urlencode(query_string))
+    jsonResponse = urllib.urlopen(URL, query_string)
     jsonOuput = json.loads(jsonResponse.read())
     
     if returnType == "JSON":
